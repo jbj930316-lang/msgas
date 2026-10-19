@@ -26,6 +26,7 @@ import { GlobalPartnersModal } from './components/modals/GlobalPartnersModal';
 import { NewsletterModal } from './components/modals/NewsletterModal';
 import { PrivacyModal } from './components/modals/PrivacyModal';
 import { CareersModal } from './components/modals/CareersModal';
+import { ChatbotDrawer } from './components/chatbot/ChatbotDrawer';
 
 import { GasProduct, Language, NewsItem, NetworkHub } from './types';
 
@@ -229,6 +230,15 @@ export default function App() {
         isOpen={isCareersOpen}
         onClose={() => setIsCareersOpen(false)}
         language={language}
+      />
+
+      {/* 11. AI Assistant Chatbot */}
+      <ChatbotDrawer
+        language={language}
+        onOpenQuote={(prefill) => handleOpenQuote(prefill)}
+        onOpenLocations={() => setIsLocationsOpen(true)}
+        onOpenMsds={() => setIsMsdsOpen(true)}
+        onOpenTelemetry={() => setIsTelemetryOpen(true)}
       />
     </div>
   );
